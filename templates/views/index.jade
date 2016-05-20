@@ -1,0 +1,66 @@
+extends ../layouts/default
+
+block content
+	.navbar.navbar-fixed-top
+		.container
+			ul.nav.navbar-nav.navbar-right
+				li 
+					a(href="/keystone/signin") login
+	if banner
+		.navbar.navbar-static-top.banner-1(style="background-image: url('"+banner+"');")
+			.container
+				br
+				h1 Oh. You need a little dummy
+				br
+				h3 text for your mockup? How quaint.
+				h4 Sustainable iPhone portland, kombucha schlitz semiotics 90's brooklyn viral church
+				br
+				a.btn.btn-success(href="#more-details") More Details
+	else
+		.navbar.navbar-static-top.banner-1
+			.container
+				h1
+					| Oh. You need a little dummy
+					br
+					| text for your mockup? How quaint.
+	#more-details.navbar.navbar-static-top.banner-1
+		.container
+			//- img(src='/images/logo.svg', width='160')
+			//- h1 Welcome
+			//- pre #{carousel[0]}
+			//- p Hashtag iPhone whatever pork belly small batch, skateboard sustainable knausgaard fashion axe tousled lomo helvetica ethical paleo. Lumbersexual salvia synth, trust fund locavore gentrify ennui beard typewriter. Kale chips lumbersexual next level, slow-carb hella godard retro cold-pressed semiotics 3 wolf moon banh mi church-key banjo fixie letterpress. Cray polaroid portland, synth butcher selfies hoodie plaid flannel DIY. Sustainable iPhone portland, kombucha schlitz semiotics 90's brooklyn viral church-key brunch umami williamsburg. Semiotics fingerstache kogi butcher gastropub. Shoreditch pug waistcoat everyday carry fanny pack.
+			#myCarousel.carousel.slide(data-ride='carousel')
+				// Indicators
+				ol.carousel-indicators
+					each item, index in carousel
+						if index==0
+							li.active(data-target='#myCarousel', data-slide-to=index)
+						else
+							li(data-target='#myCarousel', data-slide-to=index)
+					//- li(data-target='#myCarousel', data-slide-to='2')
+					//- li(data-target='#myCarousel', data-slide-to='3')
+				// Wrapper for slides
+				.carousel-inner(role='listbox')
+					each item, index in carousel
+						if index==0
+							.item.active
+								img(src=item, alt="Image")
+						else
+							.item
+								img(src=item, alt="Image")
+					//- .item.active
+					//- 	img(src='img_chania.jpg', alt='Chania')
+					//- .item
+					//- 	img(src='img_chania2.jpg', alt='Chania')
+					//- .item
+					//- 	img(src='img_flower.jpg', alt='Flower')
+					//- .item
+					//- 	img(src='img_flower2.jpg', alt='Flower')
+				// Left and right controls
+				
+				a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+					span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+					span.sr-only Previous
+				a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+					span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+					span.sr-only Next
