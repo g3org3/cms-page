@@ -1,0 +1,19 @@
+.gallery-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.banner-1 {
+  background-color: #fff;
+  margin-bottom: 0px;
+  padding-top: 50px;
+  color: #fff;
+  height: 100vh;
+  background-size: cover;
+}
+.banner-1 h1 {
+  font-weight: 300;
+}
+.jumbotron {
+  color: #000;
+}
